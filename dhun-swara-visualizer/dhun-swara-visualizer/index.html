@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Dhun · Swara Visualizer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="app">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div class="panel">
+<h1>DHUN · SWARA VISUALIZER</h1>
+<label>Song audio<input type="file" id="file" accept="audio/*,video/*"></label>
+<label>Song title<input id="title" value="Your Song Title"></label>
+<div class="row"><label>Male singer · cyan<input id="s1" value="Male voice"></label><label>Female singer · pink<input id="s2" value="Female voice"></label></div>
+<label>Voices<select id="voice"><option value="auto">Auto-detect male / female</option><option value="0">Male only</option><option value="1">Female only</option></select></label>
+<label>Analysis<select id="prec"><option value="deep">Deep · slower, most accurate</option><option value="fast">Fast</option></select></label>
+<label>Octave labels<select id="osh"><option value="0">Auto</option><option value="-1">1 lower</option><option value="1">1 higher</option></select></label>
+<div class="row"><label>Sa (tonic)<select id="sa"><option value="auto">Auto-detect</option></select></label>
+<label>Raag<select id="raga"><option value="auto">Auto-detect</option></select></label></div>
+<div class="row"><label>View<select id="mode"><option value="contour">Contour + count</option><option value="wave">Wave + ratio</option></select></label>
+<label>Handle<input id="hdl" value="@dev247.dhun"></label></div>
+<button id="play" disabled>PLAY</button>
+<input type="range" id="seek" min="0" max="1000" value="0" disabled>
+<div class="row btns"><button id="rec" disabled>EXPORT VIDEO</button><button id="exj" disabled>EXPORT JSON</button></div>
+<div id="st">Upload a song to begin. Analysis runs fully in your browser; nothing is uploaded.</div>
+<small>Tip: vocal-forward recordings track best. If Sa or Raag looks off, override it above; the view updates instantly. Shortcuts: <kbd>Space</kbd> play/pause, <kbd>←</kbd> <kbd>→</kbd> seek 5 s.</small>
+</div></div>
+<audio id="au" preload="auto"></audio>
+<script src="js/app.js"></script>
+</body></html>
